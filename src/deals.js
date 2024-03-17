@@ -3,7 +3,7 @@ import model from './e-commerce/model-1.png'
 const Deals = () => {
    return(
     <>
-            <div className='container  lg:flex justify-between mt-8 '>
+            <div className='container  lg:flex justify-between mt-28 '>
                 <div className="lg:w-[30%]">
                     <h1 className="text-6xl leading-snug">Deals of the Month</h1>
                     <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices sollicitudin. Scelerisque duis ultrices sollicitudin aliquam sem.
