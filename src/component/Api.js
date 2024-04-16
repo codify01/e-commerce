@@ -6,6 +6,7 @@ const Api = () => {
     const [gitUser, setgitUser] = useState([])
     let endpoint = "https://jsonplaceholder.typicode.com/users"
     let git = "https://api.github.com/users"
+    let backend = "http://localhost:8000/user/welcome"
     const callApi = ()=> {
         alert('hello world')
         axios.get(endpoint)
@@ -20,10 +21,17 @@ const Api = () => {
             setgitUser(res.data)
         })
     }
+    const getData = ()=> {
+        axios.get(backend)
+        .then((response)=>{
+                console.log(response);
+        })
+    }
   return (
     <>
         <h1 className="mt-32">API</h1>
-        <button className='btn' onClick={callApi}>Call API</button>
+        <button className='btn mr-2' onClick={callApi}>Call API</button>
+        <button className='btn' onClick={getData}>Get data from backend</button>
         <div>
             {
                 users.map((user, index)=>(
@@ -36,7 +44,7 @@ const Api = () => {
             {
                 gitUser.map((each)=>(
                         <div>
-                            <img src={each.avatar_url} alt="image" />
+                            <img src={each.avatar_url} alt="aiimage" />
                             <h1>{each.login}</h1>
                         </div>
                 ))

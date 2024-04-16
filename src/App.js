@@ -13,6 +13,9 @@ import UserPage from "./pages/UserPage"
 import Api from "./component/Api"
 import Effect from "./component/Effect"
 import Signup from "./Signup"
+import Dashboard from "./pages/Dashboard"
+import Counter from "./component/Counter"
+import Upload from "./component/Upload"
 // import Weather from "./pages/Weather"
 
 // import Header from "./component/header"
@@ -25,12 +28,13 @@ const App = ()=>{
     setdetails.pass("")
   }
   const [allStudents, setallStudents] = useState([])
-  
+  const token = localStorage.getItem('token')
   return(
     <>
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/counter" element={<Counter/>} />
         <Route path="/:username" element={<UserPage/>}/>
         <Route path="/home" element={<Navigate to="/"/>}/>
         <Route path="/about" element={<About/>}/>
@@ -39,6 +43,8 @@ const App = ()=>{
         <Route path="/api" element={<Api/>}/>
         <Route path="/effect" element={<Effect/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="/upload" element={<Upload/>}/>
+        <Route path="/dashboard" element={token ? <Dashboard/> : <Navigate to="/signup"/>} />
       </Routes>
     </>  
   )

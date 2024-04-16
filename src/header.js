@@ -11,9 +11,13 @@ const Header = () => {
                     <img src={logo} alt="Logo" className='w-8'/>
                     <p className="font-bold text-2xl uppercase text-slate-900">Eyefinity</p>
                     </div>
-                    <div className="flex items-center space-x-5">
+                    <div className="hidden lg:flex items-center space-x-5 ">
                         <p className="header-list"><Link to="/deals">New Arrival</Link></p>
+                        <p className="header-list"><Link to="/counter">Counter</Link></p>
+                        <p className="header-list"><Link to="/contact">Contact Us</Link></p>
                         <p className="header-list"><Link to="/about">About</Link></p>
+                        <p className="header-list"><Link to="/blog">Blog</Link></p>
+                        <p className="header-list"><Link to="/signup">Create Accout</Link></p>
                         <button className="bg-black hover:bg-black/90 py-1 px-3 rounded-2xl text-white transition-all duration-200ms font-semibold flex items-center gap-1">
                             Cart
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
