@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
-
-import Intro from './intro';
-import Second from './second';
-import Deals from './deals';
 import App from './App'
-import Portal from './pages/Portal'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
-import {store} from '../src/app/store'
+import counterReducer from './Redux/CounterSlice'
+// import {store} from '../src/app/store'
+
+const store = configureStore({
+  reducer:{
+    counterReducer
+  }
+})
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
